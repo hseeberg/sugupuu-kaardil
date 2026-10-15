@@ -140,5 +140,5 @@ Täpne tehniline kirjeldus: [`SPEC_family_migration_map.md`](SPEC_family_migrati
 ## 7. Litsents ja allikad
 
 - Kaardiandmed: [Natural Earth](https://www.naturalearthdata.com) (avalik omand).
-- Litsents: Vabavara
+- Litsents: MIT
 - Autor: Hannes Seeberg
