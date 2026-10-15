@@ -59,7 +59,7 @@ Toetatud on kaks puu tüüpi:
    - `build_html.py`
    - `map.json`
    - `SPEC_family_migration_map.md`
-   - sinu .md fail (samm 2)
+   - `demo_synthetic.md` | Väljamõeldud näidispuu (112 isikut), millest tehti ekraanipilt |
 3. Kopeeri allolev tekst Projecti **Instructions** välja:
 
 ```text
