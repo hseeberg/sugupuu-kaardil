@@ -311,7 +311,7 @@ HTML = r"""<!DOCTYPE html>
 </div>
 
 <div id="hud">
-  <div id="year">2026</div>
+  <div id="year"></div>
   <div id="phase">Täna. Vajuta <b>Esita</b> — aeg liigub tagasi.</div>
   <div id="count">0 esivanemat kaardil</div>
 </div>
@@ -489,7 +489,8 @@ NODES.forEach(n=>{
 /* ---------- timeline / animation ---------- */
 const years=NODES.filter(n=>n.y!=null).map(n=>n.y);
 const yrMin=Math.min(...years), yrMax=Math.max(...years);
-const YMIN=yrMin-8, YMAX=Math.max(2026, yrMax)+2;   // extend past 2026 if estimated years overshoot
+const NOW=new Date().getFullYear();               // end at the user's current year (their computer)
+const YMIN=yrMin-8, YMAX=Math.max(NOW, yrMax);
 const START = FWD ? YMIN : YMAX;                  // where playback begins
 const END   = FWD ? YMAX : YMIN;                  // where playback ends
 const DIR   = FWD ? +1 : -1;                      // time direction while playing

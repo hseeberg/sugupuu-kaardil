@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import re, json, math, sys
+import re, json, math, sys, datetime
+NOW_YEAR = datetime.date.today().year
 
 SRC = next((a for a in sys.argv[1:] if a.lower().endswith(".md")), "input.md")
 
@@ -533,7 +534,7 @@ for _ in range(200):
             m = nodes[cid]
             if m.get("dyear") is not None:
                 val = m["dyear"] + STEP * (n["gen"] - m["gen"])
-                if val > 2026: val = 2026        # no future births from chained estimates
+                if val > NOW_YEAR: val = NOW_YEAR    # no future births from chained estimates
                 n["dyear"] = val
                 n["year_estimated"] = True; changed = True; break
     if not changed:
